@@ -50,7 +50,7 @@ ZhiLife 致力于提供一个多模态的智能交互平台：
 
 *   **通过 Git 克隆 (推荐)**:
     ```bash
-    git clone [请在此处替换为您的项目仓库地址，例如：https://github.com/YourUsername/ZhiLife.git]
+    git clone https://github.com/CoNiMod/ZhiLife_v2.git
     cd ZhiLife
     ```
 *   **通过压缩包下载**:
@@ -184,10 +184,5 @@ ZhiLife 提供了一个便捷的批处理文件，让您一键启动所有服务
 6.  **Push** 到您的 Fork 仓库 (`git push origin feature/YourFeatureName`)。
 7.  创建一个 **Pull Request** 到主仓库的 `main` 分支。
 
-## 📄 许可证
-
-本项目采用 MIT 许可证。详见 `LICENSE` 文件 (如果存在)。
-
----
 
 感谢您使用 ZhiLife！希望它能为您的生活带来更多便利和乐趣！
