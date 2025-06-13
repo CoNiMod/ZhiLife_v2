@@ -1,0 +1,47 @@
+项目修改记录 - 改进客户端前端页面设计 (2025年6月11日)
+
+本次修改旨在根据提供的参考页面，改进现有客户端前端页面的设计，并确保所有功能正常。
+
+**修改文件列表：**
+1.  `src/App.tsx`
+2.  `src/components/WordChat.tsx`
+3.  `src/App.css`
+
+**详细修改内容：**
+
+**1. `src/App.tsx`：**
+    *   **整体布局调整：**
+        *   引入 Ant Design 的 `Layout.Sider` 组件，创建左侧导航侧边栏。
+        *   将原有的 `Tabs` 组件移除，改为通过 `selectedKey` 状态和 `renderContent` 函数来动态渲染不同页面内容（文字聊天、语音聊天、历史记录、设置）。
+        *   调整 `Layout.Header` 和 `Layout.Footer` 的样式，使其更简洁和现代化。
+        *   侧边栏添加了应用名称 "ZhiLife"。
+    *   **导航菜单：**
+        *   引入 Ant Design 的 `Menu` 组件，作为侧边栏的导航菜单。
+        *   定义 `menuItems` 数组，包含“文字聊天”、“语音聊天”、“历史记录”和“设置”等菜单项，并为每个菜单项添加了 Ant Design 图标。
+        *   通过 `selectedKey` 状态管理当前选中的菜单项，实现页面内容的切换。
+    *   **语音聊天界面优化：**
+        *   调整了语音聊天页面的布局和样式，使其更居中、更具空间感。
+        *   优化了视频播放区域（`local-player`）和实时语音回复列表的样式，增加了圆角和阴影，使其更符合现代设计趋势。
+        *   调整了连接、打断、断开、静音/取消静音按钮的样式和类型，使其更直观。
+    *   **引入新图标：**
+        *   从 `@ant-design/icons` 导入了 `MessageOutlined`, `AudioOutlined`, `SettingOutlined`, `HistoryOutlined` 图标。
+
+**2. `src/components/WordChat.tsx`：**
+    *   **移除 `Card` 组件：**
+        *   移除了组件外部的 `Card` 组件，因为 `App.tsx` 中的 `Layout.Content` 已经提供了卡片效果，避免了重复嵌套和样式冲突。
+    *   **消息气泡样式优化：**
+        *   调整了消息气泡的 `maxWidth`、`padding`、`marginBottom` 和 `borderRadius`，使其更美观。
+        *   用户消息气泡背景色改为 `#1890ff` (蓝色)，机器人消息气泡背景色改为 `#ffffff` (白色)，并添加了 `boxShadow`，增强视觉效果。
+    *   **输入框区域优化：**
+        *   `Input` 和 `Button` 组件添加了 `borderRadius` 样式，使其具有圆角效果，更符合现代聊天应用的输入框设计。
+        *   消息列表背景色调整为更浅的 `#f5f5f5`。
+
+**3. `src/App.css`：**
+    *   **移除 `#root` 样式：**
+        *   移除了 `App.css` 中关于 `#root` 的样式（`max-width`, `margin`, `padding`, `text-align`），因为 Ant Design 的 `Layout` 组件已经接管了整体布局，这些样式不再需要，避免了潜在的冲突。
+
+**预期效果：**
+*   应用程序拥有更现代、更清晰的整体布局，带有左侧导航侧边栏。
+*   文字聊天和语音聊天界面更加美观和用户友好。
+*   整体视觉风格与提供的参考图片保持一致。
+*   所有现有功能（文字聊天、语音聊天连接/断开/静音、消息显示）保持正常。
